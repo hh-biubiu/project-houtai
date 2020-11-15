@@ -12,6 +12,10 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.prototype.$preImg = 'http://localhost:3000'
 Vue.use(ElementUI);
 import './assets/css/reset.css'
+
+import './assets/css/component.css';
+import './assets/css/demo.css';
+import './assets/css/login.css';
 // Vue.prototype.event = new Vue();
 new Vue({
   el: '#app',

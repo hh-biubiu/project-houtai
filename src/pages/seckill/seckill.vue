@@ -1,18 +1,18 @@
 <template>
   <div>
       <el-button type="primary" @click="Wadd" class="but">添加</el-button>
-      <menu-list @edit='edit($event)'></menu-list>
-      <menu-add :info = 'info' ref='one'></menu-add>
+      <v-list @edit='edit($event)'></v-list>
+      <v-add :info = 'info' ref='one'></v-add>
   </div>
 </template>
 
 <script>
-import menuList from './menuList.vue';
-import menuAdd from './menuAdd.vue'
+import vList from './seckillList.vue';
+import vAdd from './seckillAdd.vue'
 export default {
     components:{
-        menuList,
-        menuAdd,
+        vList,
+        vAdd,
     },
     data(){
         return {
@@ -27,13 +27,13 @@ export default {
         Wadd(){
             this.info.isShow = !this.info.isShow;
             this.info.isAdd = true;
-            this.info.title = '菜单添加'
+            this.info.title = '活动添加'
         },
         edit(e){
         // console.log(e);  //此时获取的是每一条数据的id
         this.info.isShow = true,
         this.info.isAdd = false;
-        this.info.title = '菜单修改'
+        this.info.title = '活动修改'
         // console.log(this.$refs);
         this.$refs.one.getone(e)
     }

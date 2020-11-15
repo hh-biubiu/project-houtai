@@ -208,7 +208,7 @@ export const reSpecAdd = (form)=>{
 //商品规格总数
 export const reSpecCount = ()=>{
     return axios({
-        url:baseUrl + "/api/goodscount",
+        url:baseUrl + "/api/specscount",
         method:"get",
     })
 }
@@ -321,3 +321,95 @@ export const reMemberEdit = (form)=>{
         data:qs.stringify(form)
     })
 }
+
+//轮播图添加
+export const reSlideAdd = (form)=>{
+    var data = new FormData();
+    for(var i in form){
+        data.append(i,form[i])
+    }
+    return axios({
+        url:baseUrl + "/api/banneradd",
+        method:"post",
+        data:data
+    })
+}
+
+//轮播图列表
+export const reSlideList = (params)=>{
+    return axios({
+        url:baseUrl +"/api/bannerlist",
+        method:"get",
+        params:params
+    })
+}
+//修改获取一条数据
+export const reSlideInfo = (id)=>{
+    return axios({
+        url:baseUrl +"/api/bannerinfo",
+        method:"get",
+        params:id
+    })
+}
+//轮播图修改数据
+export const reSlideEdit = (form)=>{
+    var data = new FormData();
+    for(var i in form){
+        data.append(i,form[i])
+    }
+    return axios({
+        url:baseUrl +"/api/banneredit",
+        method:"post",
+        data:data
+    })
+}
+//轮播图删除
+export const reSlideDel = (id)=>{
+    return axios({
+        url:baseUrl +"/api/bannerdelete",
+        method:"post",
+        data:id
+    })
+}
+
+//秒杀活动添加
+export const reKillAdd = (form)=>{
+    return axios({
+        url:baseUrl + "/api/seckadd",
+        method:"post",
+        data:qs.stringify(form)
+    })
+}
+
+//秒杀列表
+export const reKillList = ()=>{
+    return axios({
+        url:baseUrl +"/api/secklist",
+        method:"get",
+    })
+}
+//修改获取一条数据
+export const reKillInfo = (id)=>{
+    return axios({
+        url:baseUrl +"/api/seckinfo",
+        method:"get",
+        params:id
+    })
+}
+//秒杀修改数据
+export const reKillEdit = (form)=>{
+    return axios({
+        url:baseUrl +"/api/seckedit",
+        method:"post",
+        data:qs.stringify(form)
+    })
+}
+//商品分类删除
+export const reKillDel = (id)=>{
+    return axios({
+        url:baseUrl +"/api/seckdelete",
+        method:"post",
+        data:id
+    })
+}
+

@@ -8,6 +8,9 @@ import classify from './moudels/classify';
 import spec from './moudels/spec';
 import goods from './moudels/goods';
 import member from './moudels/member';
+import admin from './moudels/admin';
+import slide from './moudels/slide';
+import seckill from './moudels/seckill'
 export default new Vuex.Store({
     modules:{
         menu,
@@ -16,6 +19,9 @@ export default new Vuex.Store({
         classify,
         spec,
         goods,
-        member
+        member,
+        admin,
+        slide,
+        seckill
     }
 })

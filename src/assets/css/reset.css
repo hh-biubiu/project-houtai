@@ -1,10 +1,14 @@
-*{
-    margin: 0;
-    padding: 0;
+a{
+    text-decoration: none;
+    color: #333;
 }
-ul,li{
-    list-style: none;
+ul ,li{
+    list-style:none;
 }
-input,button,select,textarea{
+input,button{
     outline: none;
+}
+*{
+    padding: 0;
+    margin: 0;
 }

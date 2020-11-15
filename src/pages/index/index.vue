@@ -35,8 +35,8 @@
           <el-menu-item index="/index/spec">商品规格</el-menu-item>
           <el-menu-item index="/index/goods">商品管理</el-menu-item>
           <el-menu-item index="/index/member">会员管理</el-menu-item>
-          <el-menu-item index="1-2">轮播图管理</el-menu-item>
-          <el-menu-item index="1-2">秒杀活动</el-menu-item>
+          <el-menu-item index="/index/slide">轮播图管理</el-menu-item>
+          <el-menu-item index="/index/seckill">秒杀活动</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>

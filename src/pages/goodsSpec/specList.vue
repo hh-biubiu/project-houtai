@@ -39,7 +39,10 @@
         </template>
         
       </el-table-column>
+      
     </el-table>
+    <el-pagination  :page-size="2" background layout="prev, pager, next" :total="total" @current-change='changeCurrentPage' :current-page='page'>
+      </el-pagination>
   </div>
 </template>
 <script>
@@ -51,7 +54,9 @@ import {alertSuccess,alertwarning}  from '../../util/alert'
 export default {
   computed: {
     ...mapGetters({
-      list:'spec/list'
+      list:'spec/list',
+      total:'spec/total',
+      page:'spec/page'
     })
   },
   components: {},
@@ -62,7 +67,9 @@ export default {
   },
   methods: {
     ...mapActions({
-      reqSpecList:'spec/reqSpecList'
+      reqSpecList:'spec/reqSpecList', 
+      reqSpecCount: "spec/reqSpecCount",
+      getCurrentPage: "spec/getCurrentPage",
     }),
     // 删除
     del(id){
@@ -75,6 +82,8 @@ export default {
           reSpecDel({id:id}).then(res=>{
             this.reqSpecList()
             alertSuccess(res.data.msg)
+            this.reqSpecCount()
+          this.getCurrentPage(1)
         })
          
         })
@@ -84,11 +93,16 @@ export default {
     // 更新
     updata(id){
       this.$emit('edit',id)
+    },
+       // 点击当前页码数修改vuex中的page的值
+    changeCurrentPage(p){
+      console.log(p);
+      this.getCurrentPage(p)
     }
   },
   mounted() {
-    this.reqSpecList()
-    
+    this.reqSpecList();
+    this.reqSpecCount()
   },
 };
 </script>

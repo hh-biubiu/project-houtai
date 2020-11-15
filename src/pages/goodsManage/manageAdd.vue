@@ -170,7 +170,7 @@ export default {
       this.secondList = this.clalist.find(item => {
         return item.id == this.form.first_cateid;
       }).children;
-      // console.log(this.secondList);
+      console.log(this.secondList);
     },
     changeSpec() {
       // console.log(this.form.specsid);

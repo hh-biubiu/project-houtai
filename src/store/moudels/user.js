@@ -32,6 +32,7 @@ const actions = {
     reqUserCount(context,res){
         reUserCount().then(res=>{
             context.commit('getTotal',res.data.list[0].total)
+            // console.log(res);
         })
     },
     // 获取当前页码数

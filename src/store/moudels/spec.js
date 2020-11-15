@@ -1,8 +1,8 @@
-import { reSpecList, reGoodsCount } from '../../util/request';
+import { reSpecList, reSpecCount } from '../../util/request';
 //初始数据
 const state = {
     list: [],//请求回来到数据,
-    total: 0,//管理员总数,
+    total: 0,//总数,
     size: 2, //每页展示几条
     page: 1 //当前页码数
 }
@@ -37,6 +37,7 @@ const actions = {
     reqSpecCount(context, res) {
         reSpecCount().then(res => {
             context.commit('getTotal', res.data.list[0].total)
+            // console.log(res);
         })
     },
     // 获取当前页码数

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-dialog title="菜单添加" :visible.sync="info.isShow">
+    <el-dialog title="info.title" :visible.sync="info.isShow">
       <el-form :model="form">
         <el-form-item label="菜单名称" :label-width="width">
           <el-input v-model="form.title" autocomplete="off"></el-input>
